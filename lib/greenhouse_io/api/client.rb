@@ -118,7 +118,7 @@ module GreenhouseIo
 
       set_headers_info(response.headers)
 
-      if response.code == 200
+      if response.success?
         parse_json(response)
       else
         raise GreenhouseIo::Error.new(response.code)
